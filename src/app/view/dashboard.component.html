@@ -1,0 +1,15 @@
+﻿<div class="row">
+  <div class="col s12 m6" *ngFor="let tipo of tipos">
+    <div class="card white">
+      <div class="card-content black-text">
+        <span class="card-title">{{tipo.nombre}}</span>
+        <p>
+          <a class="collection-item"><span class="new badge">{{tipo.nuevas}}</span></a>
+        </p>
+      </div>
+      <div class="card-action">
+        <a href="#">Ver más</a>
+      </div>
+    </div>
+  </div>
+</div>
