@@ -2,8 +2,14 @@
 import { NgModule } from '@angular/core';
 import { MaterializeModule } from 'angular2-materialize';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PersistenceModule } from 'angular-persistence';
 
 import { AppComponent } from './app.component';
+
+import { RegisterComponent } from './controller/register.component';
+import { NavbarRegisterComponent } from './controller/navbar-register.component';
+import { FormRegisterComponent } from './controller/form-register.component';
 
 import { LoginComponent } from './controller/login.component';
 import { NavbarLoginComponent } from './controller/navbar-login.component';
@@ -26,7 +32,10 @@ import { routing, appRoutingProviders, routingSeller } from './app.routing';
       NavbarPrincipalComponent,
       FooterPrincipalComponent,
       PrincipalComponent,
-      DashboardComponent
+      DashboardComponent,
+      RegisterComponent,
+      NavbarRegisterComponent,
+      FormRegisterComponent
   ],
   imports: [
       BrowserModule,
@@ -34,7 +43,9 @@ import { routing, appRoutingProviders, routingSeller } from './app.routing';
       routing,
       routingSeller,
       FormsModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      HttpClientModule,
+      PersistenceModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

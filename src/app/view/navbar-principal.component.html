@@ -1,12 +1,8 @@
 ﻿<nav class="teal">
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo" style="padding-left: 10px">Logo</a>
+    <a href="#!" class="brand-logo" style="padding-left: 10px">{{usrLogin.company.name}}</a>
     <a href="#" materialize="sideNav" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
     </ul>
     <ul class="side-nav fixed teal darken-2" id="mobile-demo">
       <li>
@@ -15,15 +11,29 @@
             <img src="../../assets/img/842606.jpg">
           </div>
           <a href="#!user"><img class="circle" src="../../assets/img/yuna.jpg"></a>
-          <a href="#!name"><span class="white-text name">John Doe</span></a>
-          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          <a><span class="white-text name">{{usrLogin.username}}</span></a>
+          <a><span class="white-text email">{{usrLogin.email}}</span></a>
         </div>
       </li>
-      <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!" class="white-text"><i class="material-icons white-text">face</i>Perfil</a></li>
       <li><div class="divider"></div></li>
-      <li><a class="subheader">Subheader</a></li>
-      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header white-text">Cotizaciones<i class="material-icons white-text">arrow_drop_down</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li *ngFor="let tipo of tipos">
+                  <a>{{ tipo.nombre }} <span class="new badge">{{tipo.nuevas}}</span></a>
+                </li>
+                <li>
+                  <a>Ver Resumen</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </nav>

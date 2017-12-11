@@ -2,6 +2,24 @@
   <div class="row" style="width:inherit">
     <div class="col l4 hide-on-med-and-down"></div>
     <form [formGroup]="myForm" (submit)="loginUser(myForm.value)" class="col s12 m12 l4 white">
+      <div id="modal" class="modal row" materialize="modal" style="width: 30%">
+        <div class="col s4"></div>
+        <div class="modal-content col s4 center-align">
+          <div class="preloader-wrapper bic active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer col s4">
+        </div>
+      </div>
       <div class="row center-align" style="padding-top:20px">
         <i class="large material-icons">lock_open</i>
       </div>
@@ -26,7 +44,7 @@
       <div class="row">
         <div class="col s12 center-align">
           <a href="https://vendedor.itcreed.me" class="modal-action modal-close waves-effect waves-teal btn-flat">Soy un vendedor</a>
-          <a href="#!" class="modal-action modal-close waves-effect waves-teal btn-flat">Quiero registrarme</a>
+          <a [routerLink]="['/register']" class="modal-action modal-close waves-effect waves-teal btn-flat">Quiero registrarme</a>
           <button id="submit" type="submit" class="waves-effect waves-teal btn-flat">Iniciar sesion</button>
         </div>
       </div>

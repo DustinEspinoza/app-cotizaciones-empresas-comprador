@@ -58,3 +58,6 @@ main {
   right: 0;
   top: 0;
 }
+.tabs .indicator {
+  background-color: #009688 !important;
+}

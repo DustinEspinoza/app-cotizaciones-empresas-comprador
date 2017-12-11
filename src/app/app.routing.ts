@@ -2,6 +2,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './controller/login.component';
+import { RegisterComponent } from './controller/register.component';
 import { PrincipalComponent } from './controller/principal-component';
 import { DashboardComponent } from './controller/dashboard.component';
 
@@ -10,7 +11,7 @@ import { DashboardComponent } from './controller/dashboard.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-
+    { path: 'register', component: RegisterComponent }
 ];
 
 const appRoutesDashboard: Routes = [

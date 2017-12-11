@@ -1,0 +1,111 @@
+﻿<div class="center-div valign-wrapper">
+  <div class="row" style="width:inherit">
+    <div class="col l4 hide-on-med-and-down"></div>
+    <form [formGroup]="myForm" (submit)="registerUser(myForm.value)" class="col s12 m12 l4 white">
+      <div id="modal" class="modal row" materialize="modal" style="width: 15%">
+        <div class="col s4"></div>
+        <div class="modal-content col s4 center-align">
+          <div class="preloader-wrapper bic active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer col s4">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s6"><a href="#empresa" class="teal-text active">Empresa</a></li>
+            <li class="tab col s6"><a href="#contacto" class="teal-text active">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="empresa">
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="company_name" type="text" class="validate" [formControl]="myForm.controls['company_name']">
+            <label for="company_name">Nombre de la compañía</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="company_legal_identifier" type="text" class="validate" [formControl]="myForm.controls['company_legal_identifier']">
+            <label for="company_legal_identifier">Identificador Legal</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="address" type="text" class="validate" [formControl]="myForm.controls['address']" />
+            <label for="address">Dirección</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="phone" type="number" class="validate" [formControl]="myForm.controls['phone']" />
+            <label for="phone">Teléfono</label>
+          </div>
+        </div>
+      </div>
+      <div id="contacto">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate" [formControl]="myForm.controls['first_name']"/>
+            <label for="first_name">Primer Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="middle_name" type="text" class="validate" [formControl]="myForm.controls['middle_name']" />
+            <label for="middle_name">Segundo Nombre</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_surname" type="text" class="validate" [formControl]="myForm.controls['first_surname']"/>
+            <label for="first_surname">Primer apellido</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="second_surname" type="text" class="validate" [formControl]="myForm.controls['second_surname']" />
+            <label for="second_surname">Segundo apellido</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="email" type="email" class="validate" [formControl]="myForm.controls['email']"/>
+            <label for="email">E-mail</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="contact_phone" type="number" class="validate" [formControl]="myForm.controls['contact_phone']"/>
+            <label for="contact_phone">Teléfono de contacto</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="username" type="text" class="validate" [formControl]="myForm.controls['username']"/>
+            <label for="username">Nombre de usuario</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate" [formControl]="myForm.controls['password']"/>
+            <label for="password">Contraseña</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 center-align">
+          <button id="submit" type="submit" class="waves-effect waves-teal btn-flat">Registrarse</button>
+        </div>
+      </div>
+    </form>
+    <div class="col l4 hide-on-med-and-down"></div>
+  </div>
+</div>
