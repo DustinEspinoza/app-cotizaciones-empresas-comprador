@@ -1,0 +1,75 @@
+﻿<div class="row" style="padding-top:15px">
+  <div class="col l2 hide-on-med-and-down"></div>
+  <div class="col l8 s12 white">
+    <form [formGroup]="formBusqueda" class="col s12" (submit)="buscar(formBusqueda.value)">
+      <div class="row">
+        <div class="input-field col m6 s12">
+          <select multiple [formControl]="formBusqueda.controls['selectCategoria']" name="rubrosSeleccionados" materialize="material_select" [ngModel]="categoryDefault" ngModel>
+            <option disabled [selected]="false">
+              Elige una categoria
+            </option>
+            <option *ngFor="let category of categories"[ngValue]="category">
+              {{category.name}}
+            </option>
+          </select>
+          <label>Seleccionar rubro:</label>
+        </div>
+        <div class="input-field col m6 s12">
+          <select multiple [formControl]="formBusqueda.controls['selectSubCategoria']" name="subrubrosSeleccionados" materialize="material_select" [ngModel]="subCategoryDefault" ngModel>
+            <option disabled [selected]="false">
+              Elige una subcategoria
+            </option>
+            <option *ngFor="let subcategory of subcategories" [ngValue]="subcategory">
+              {{subcategory.name}}
+            </option>
+          </select>
+          <label>Seleccionar subrubro:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12 center-align">
+          <button id="submit" type="submit" class="waves-effect waves-teal btn-flat">Buscar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row" style="padding-top:15px">
+    <div class="col s12 white" *ngIf="busquedaRealizada">
+      <table>
+        <thead>
+          <tr>
+            <th>Logo</th>
+            <th>Nombre</th>
+            <th>Rubros</th>
+            <th>Subrubros</th>>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let company of companies">
+            <td>
+              <img src="{{company.logoURL}}" style="height:50px; width:auto"/>
+            </td>
+            <td>{{company.name}}</td>
+            <td>
+              <div name="chipsCategorias" *ngFor="let category of company.categories" class="chip">
+                {{category.name}}
+              </div>
+            </td>
+            <td>
+              <div name="chipsSubCategorias" *ngFor="let subcategory of company.subcategories" class="chip">
+                {{subcategory.name}}
+              </div>
+            </td>
+            <td>
+              <button class="btn waves-effect waves-light" type="button" name="action" (click)="perfil(company)">
+                Ir al perfil
+                <i class="material-icons right">arrow_forward</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col l2 hide-on-med-and-down"></div>
+</div>

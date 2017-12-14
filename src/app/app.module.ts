@@ -20,6 +20,17 @@ import { NavbarPrincipalComponent } from './controller/navbar-principal.componen
 import { FooterPrincipalComponent } from './controller/footer-principal.component';
 
 import { DashboardComponent } from './controller/dashboard.component';
+import { SearchComponent } from './controller/search.component';
+import { ProfileComponent } from './controller/profile.componen';
+import { ProfileSellerComponent } from './controller/profile-seller.component';
+import { SendQuoteComponent } from './controller/send-quote.component';
+import { QuotationsComponent1 } from './controller/quotations-1.component';
+import { QuotationsComponent2 } from './controller/quotations-2.component';
+import { QuotationsComponent3 } from './controller/quotations-3.component';
+import { QuotationsComponent4 } from './controller/quotations-4.component';
+import { QuotationsComponent5 } from './controller/quotations-5.component';
+import { QuotationsComponent6 } from './controller/quotations-6.component';
+import { QuotationDetailComponent } from './controller/quotation-detail.component';
 
 import { routing, appRoutingProviders, routingSeller } from './app.routing';
 
@@ -35,10 +46,21 @@ import { routing, appRoutingProviders, routingSeller } from './app.routing';
       DashboardComponent,
       RegisterComponent,
       NavbarRegisterComponent,
-      FormRegisterComponent
+      FormRegisterComponent,
+      SearchComponent,
+      ProfileSellerComponent,
+      SendQuoteComponent,
+      QuotationsComponent1,
+      QuotationsComponent2,
+      QuotationsComponent3,
+      QuotationsComponent4,
+      QuotationsComponent5,
+      QuotationsComponent6,
+      QuotationDetailComponent,
+      ProfileComponent
   ],
   imports: [
-      BrowserModule,
+      BrowserModule.withServerTransition({ appId: 'Comprador - Cotizame' }),
       MaterializeModule,
       routing,
       routingSeller,

@@ -1,0 +1,80 @@
+﻿<div class="row" style="padding-top:15px">
+  <div class="col l2 hide-on-med-and-down"></div>
+  <div class="col l8 s12 white">
+    <div class="row center-align">
+      <h4>Perfil de la empresa: {{companyget.name}}</h4>
+    </div>
+    <div class="row" style="padding-top:15px">
+      <img class="col l4 m6 s12" style="height:100px; width:auto; padding-left:20px" src="{{companyget.logoURL}}"/>
+      <div class="col l4 m6 s12">
+        <strong class="col s6">Nombre: </strong>
+        <p class="col s6">{{companyget.name}}</p>
+      </div>
+      <div class="col l4 m6 s12">
+        <strong class="col s6">Identificador Legal: </strong>
+        <p class="col s6">{{companyget.legalIdentifier}}</p>
+      </div>
+      <div class="col l4 m6 s12">
+        <strong class="col s6">Telefono: </strong>
+        <p class="col s6">{{companyget.phone}}</p>
+      </div>
+      <div class="col l4 m6 s12">
+        <strong class="col s6">Direccion: </strong>
+        <p class="col s6">{{companyget.address}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m6 s12">
+        <div class="col s6">
+          <p>
+            Rubros:
+          </p>
+        </div>
+        <div class="col s6">
+          <div name="chipsCategorias" *ngFor="let category of companyget.categories" class="chip">
+            {{category.name}}
+          </div>
+        </div>
+      </div>
+      <div class="col m6 s12">
+        <div class="col s6">
+          <p>
+            Subrubros:
+          </p>
+        </div>
+        <div class="col s6">
+          <div name="chipsCategorias" *ngFor="let category of companyget.subcategories" class="chip">
+            {{category.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row center-align" style="padding-top:30px">
+      <h4>Productos que distribuye esta empresa</h4>
+    </div>
+    <div class="row center-align">
+      <table>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Descripcion</th>
+            <th>Categoria</th>
+            <th>Fecha de creacion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.category.name}}</td>
+            <td>{{product.createdDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row center-align" style="padding-top:30px">
+      <button id="submit" type="button" class="waves-effect waves-teal btn-flat" (click)="cotizar()">Cotizar</button>
+    </div>
+  </div>
+  <div class="col l2 hide-on-med-and-down"></div>
+ </div>

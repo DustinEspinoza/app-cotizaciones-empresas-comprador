@@ -1,0 +1,45 @@
+﻿<div class="row" style="padding-top:15px">
+  <div class="col s12 white center-align">
+    <h4>Cotizaciones {{quote.customerLabel}}</h4>
+  </div>
+  <div class="col l2 hide-on-med-and-down"></div>
+  <div class="col l8 s12 white" *ngIf="!hayCotizaciones">
+    <div class="center-align">
+      <h4>No hay cotizaciones en este estado.</h4>
+    </div>
+  </div>
+
+  <div class="col l2 hide-on-med-and-down"></div>
+</div>
+<div class="row" style="padding-top:15px">
+  <div class="col l2 hide-on-med-and-down"></div>
+  <div class="col l8 s12 white" *ngIf="hayCotizaciones">
+    <div class="center-align">
+      <table>
+        <thead>
+          <tr>
+            <th>Numero Cotizacion</th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Vendedor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let quote of quotesByStatu">
+            <td>{{quote.quotationID}}</td>
+            <td>{{quote.title}}</td>
+            <td>{{quote.description}}</td>
+            <td>{{quote.seller.name}}</td>
+            <td>
+              <button class="btn waves-effect waves-light" type="button" name="action" (click)="verDetalle(quote)">
+                Ver detalle
+                <i class="material-icons right">arrow_forward</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="col l2 hide-on-med-and-down"></div>
+</div>

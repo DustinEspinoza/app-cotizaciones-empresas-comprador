@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { PersistenceService, StorageType } from 'angular-persistence';
+import { toast } from 'angular2-materialize';
 
 declare var $: any;
 
@@ -39,7 +40,7 @@ export class FormLoginComponent {
                 headers: new HttpHeaders().set('Content-Type', 'application/json'),
             })
             .subscribe(
-            (data: any) => {
+            data => {
                 this.response = data;
                 $('#modal').modal('close');
                 this.persistence.set('postUser', this.response, { type: StorageType.SESSION });
@@ -48,6 +49,10 @@ export class FormLoginComponent {
                     this.persistence.set('isLogged', login, { type: StorageType.SESSION });
                     this.router.navigate(['/user']);
                 }
+            },
+            err => {
+                $('#modal').modal('close');
+                toast("Credenciales incorrectas", 4000);
             }
             )
     }
