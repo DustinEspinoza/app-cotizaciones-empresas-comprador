@@ -55,6 +55,8 @@ export class SendQuoteComponent {
         this.productLocal.quantity = this.formQuote.controls['quantity'].value;
         this.allProducts.push(this.productLocal);
         this.hayProductos = true;
+        this.formQuote.controls['public_name'].setValue('');
+        this.formQuote.controls['quantity'].setValue('');
     }
     enviarCotizacion() {
         this.quote.customerID = this.usrLogin.company.customerID;
