@@ -16,6 +16,22 @@
             <button type="button" class="btn waves-effect waves-light" (click)="addProduct()">Agregar Producto</button>
           </div>
         </div>
+        <div class="row" *ngIf="hayProductos">
+          <table class="col s12">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let content of allProducts">
+                <td>{{content.public_name}}</td>
+                <td>{{content.quantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <div class="row">
           <div class="input-field col m6 s12">
             <input id="quote_name" type="text" class="validate" [formControl]="formQuote.controls['quote_name']">

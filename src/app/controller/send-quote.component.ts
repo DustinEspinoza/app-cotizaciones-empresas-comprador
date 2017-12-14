@@ -22,6 +22,7 @@ export class SendQuoteComponent {
     usrLogin: UserPost
     public products: ProductGet[] = new Array<ProductGet>();
     public path: string;
+    public hayProductos: boolean = false;
     formQuote: FormGroup;
     allProducts: ContentJSON[] = new Array<ContentJSON>();
     productLocal: ContentJSON = new ContentJSON();
@@ -53,6 +54,7 @@ export class SendQuoteComponent {
         this.productLocal.public_name = this.formQuote.controls['product_name'].value;
         this.productLocal.quantity = this.formQuote.controls['quantity'].value;
         this.allProducts.push(this.productLocal);
+        this.hayProductos = true;
     }
     enviarCotizacion() {
         this.quote.customerID = this.usrLogin.company.customerID;
